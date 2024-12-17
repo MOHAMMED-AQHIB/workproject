@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+/* Glassmorphism Effect */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero {
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.carousel-item p {
+  font-size: 1.2rem;
+  font-style: italic;
+}

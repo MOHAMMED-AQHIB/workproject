@@ -1,19 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { ReactTyped } from "react-typed";
+
 
 const Hero = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+  }, []);
+
   return (
-    <section className="hero bg-light py-5 text-center">
+    <section
+      className="hero d-flex align-items-center justify-content-center text-center"
+      style={{
+        minHeight: "100vh",
+        background: "linear-gradient(135deg, #6d5dfc, #a56eff)",
+        color: "white",
+      }}
+    >
       <div className="container">
-        <h2>Your Partner in Biotechnology</h2>
-        <p className="lead">
-          Explore groundbreaking solutions that drive innovation and
-          sustainability.
+        <h1 data-aos="fade-down">Welcome to BioBiz</h1>
+        <ReactTyped
+  strings={["Innovating the Future", "Sustainability at Its Core", "Your Partner in Biotech"]}
+  typeSpeed={60}
+  backSpeed={50}
+  loop
+/>
+
+        <p className="lead mt-3" data-aos="fade-up">
+          Explore groundbreaking solutions for a sustainable tomorrow.
         </p>
-        <img
-          src="https://via.placeholder.com/900x400"
-          alt="Hero"
-          className="img-fluid rounded mt-3"
-        />
+        <a href="#services" className="btn btn-light mt-3" data-aos="zoom-in">
+          Learn More
+        </a>
       </div>
     </section>
   );

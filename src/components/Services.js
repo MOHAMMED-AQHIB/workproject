@@ -4,23 +4,21 @@ const Services = () => {
   return (
     <section id="services" className="py-5">
       <div className="container">
-        <h2 className="text-center mb-5">Our Services</h2>
+        <h2 className="text-center mb-5" data-aos="fade-up">Our Services</h2>
         <div className="row">
-          <div className="col-md-4 text-center">
-            <i className="bi bi-flask fs-1 text-primary"></i>
-            <h4 className="mt-3">Research & Development</h4>
-            <p>Innovative research tailored to your needs.</p>
-          </div>
-          <div className="col-md-4 text-center">
-            <i className="bi bi-globe fs-1 text-primary"></i>
-            <h4 className="mt-3">Global Partnerships</h4>
-            <p>Building connections worldwide.</p>
-          </div>
-          <div className="col-md-4 text-center">
-            <i className="bi bi-tree fs-1 text-primary"></i>
-            <h4 className="mt-3">Sustainability</h4>
-            <p>Driving eco-friendly solutions for the future.</p>
-          </div>
+          {[
+            { title: "Research & Development", icon: "bi bi-flask", text: "Innovative research tailored to your needs." },
+            { title: "Global Partnerships", icon: "bi bi-globe", text: "Building connections worldwide." },
+            { title: "Sustainability", icon: "bi bi-tree", text: "Driving eco-friendly solutions for the future." },
+          ].map((service, index) => (
+            <div key={index} className="col-md-4" data-aos="zoom-in">
+              <div className="card text-center p-4 border-0 shadow-sm">
+                <i className={`${service.icon} text-primary fs-1`}></i>
+                <h4 className="mt-3">{service.title}</h4>
+                <p>{service.text}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
