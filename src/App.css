@@ -57,3 +57,27 @@
   font-size: 1.2rem;
   font-style: italic;
 }
+/* Custom styles for mobile screens */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh; /* Reduce height for smaller screens */
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem; /* Reduce heading size */
+  }
+
+  .hero p {
+    font-size: 1rem; /* Reduce paragraph size */
+  }
+
+  .btn {
+    font-size: 0.9rem; /* Adjust button size */
+    padding: 8px 12px;
+  }
+
+  .card {
+    margin-bottom: 20px; /* Add spacing between cards */
+  }
+}
